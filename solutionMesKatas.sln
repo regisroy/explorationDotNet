@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp6SampleProject", "CSh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteSamples", "SQLiteSamples\SQLiteSamples.csproj", "{A5052800-B501-47ED-88F3-2E4C404096CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingResources", "UsingResources\UsingResources.csproj", "{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,14 @@ Global
 		{A5052800-B501-47ED-88F3-2E4C404096CA}.Release|Any CPU.ActiveCfg = Release|x86
 		{A5052800-B501-47ED-88F3-2E4C404096CA}.Release|x86.ActiveCfg = Release|x86
 		{A5052800-B501-47ED-88F3-2E4C404096CA}.Release|x86.Build.0 = Release|x86
+		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Debug|x86.Build.0 = Debug|Any CPU
+		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Release|x86.ActiveCfg = Release|Any CPU
+		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
