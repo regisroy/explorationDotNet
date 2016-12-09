@@ -215,7 +215,7 @@ namespace CSharp6
             list2.Add("quatre");
             list2.Add("quatre");
             list2.Add("cinq");
-            Check.That(list).HasSize(7);
+            Check.That(list2).HasSize(7);
         }
     }
 }
