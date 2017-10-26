@@ -385,7 +385,6 @@ namespace NUnit.Tests
         [Test]
         public void EqualityTestsWithTolerance_MixedFloatAndDouble()
         {
-            // Bug Fix 1743844
             Assert.That(2.20492d, Is.EqualTo(2.2d).Within(0.01f),
                 "Double actual, Double expected, Single tolerance");
             Assert.That(2.20492d, Is.EqualTo(2.2f).Within(0.01d),

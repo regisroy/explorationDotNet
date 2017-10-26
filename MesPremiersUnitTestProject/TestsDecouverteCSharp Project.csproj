@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38239804-5A6B-4591-B61D-3BE8F1C34287}</ProjectGuid>
+    <ProjectGuid>{F8775E25-AADE-4FF0-B0C6-72E8548A6D5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSharp6Test</RootNamespace>
-    <AssemblyName>CSharp6Test</AssemblyName>
+    <RootNamespace>MesPremiersUnitTestProject</RootNamespace>
+    <AssemblyName>MesPremiersUnitTestProject</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -38,6 +38,9 @@
     <Reference Include="NFluent, Version=2.0.0.71, Culture=neutral, PublicKeyToken=18828b37b84b1437">
       <HintPath>..\packages\NFluent.2.0.0\lib\net45\NFluent.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+      <HintPath>..\packages\NUnit.3.8.1\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -48,14 +51,38 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CodeWars.cs" />
-    <Compile Include="CodeWarsTest.cs" />
+    <Compile Include="ClassTypeTest.cs" />
+    <Compile Include="DictionaryTest.cs" />
+    <Compile Include="Common\MultiMapSet.cs" />
+    <Compile Include="Common\MultiMapList.cs" />
+    <Compile Include="CSharp6Class.cs" />
+    <Compile Include="CSharp6Test.cs" />
+    <Compile Include="DatesTest.cs" />
+    <Compile Include="EnumTest.cs" />
+    <Compile Include="DirectoryAndFileUsagesTest.cs" />
+    <Compile Include="FormattageToStringTest.cs" />
+    <Compile Include="CollectionsTest.cs" />
+    <Compile Include="RegExpTest.cs" />
+    <Compile Include="StringTest.cs" />
+    <Compile Include="LinqTest.cs" />
+    <Compile Include="OverrideAndHide.cs" />
+    <Compile Include="Common\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NumberSystemConverter_UnitTests.cs" />
+    <Compile Include="RomanNumeralConverterExpectedValuesUnitTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
+      <Project>{47A6A880-6108-4D2B-9408-5FF7F944C5B8}</Project>
+      <Name>ClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
