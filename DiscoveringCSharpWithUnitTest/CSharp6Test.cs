@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using CSharp6Test;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NFluent;
+using NUnit.Framework;
 using static CSharp6.CSharp6Class;
 
 namespace CSharp6
 {
-    [TestClass]
+    [TestFixture]
     public class CSharp6Test
     {
-        [TestMethod]
+        [Test]
         public void Method_ExpressionBodied_Test()
         {
             //1
@@ -24,7 +24,7 @@ namespace CSharp6
             Check.That(instance.Recorder).IsEqualTo("un message");
         }
 
-        [TestMethod]
+        [Test]
         public void Constructor_Test()
         {
             //1 : Constructor : Object initializer
@@ -39,33 +39,33 @@ namespace CSharp6
             Check.That(cSharp6Class2.Name).IsEqualTo("C#6");
         }
 
-        [TestMethod]
+        [Test]
         public void Type_String_Interpolation_Test()
         {
-            const string variable = "valeure";
+            const string VARIABLE = "valeure";
             //1 : String concatenation / interpolation
-            Check.That($"Concaténation de string spécial C#6. {variable}")
-                .IsEqualTo("Concaténation de string spécial C#6. valeure");
+            Check.That($"Concaténation de string spécial C#6. {VARIABLE}")
+                 .IsEqualTo("Concaténation de string spécial C#6. valeure");
         }
 
-        [TestMethod]
+        [Test]
         public void Types_Test()
         {
             //int - Int32
-            const int monInt = 12;
-            Check.That(Int32.Parse("12")).IsEqualTo(monInt);
+            const int MON_INT = 12;
+            Check.That(int.Parse("12")).IsEqualTo(MON_INT);
             //default values
-            Check.That(new Int16()).IsEqualTo((short) 0);
-            Check.That(new Int32()).IsEqualTo((int) 0);
-            Check.That(new Int64()).IsEqualTo((long) 0);
-            Check.That(new Int64()).IsEqualTo((long) 0);
-            Check.That(new Int64()).IsEqualTo((long) 0);
-            Check.That(new Single()).IsEqualTo((float) 0F);
-            Check.That(new Double()).IsEqualTo((double) 0D);
-            Check.That(new Decimal()).IsEqualTo((decimal) 0M);
+            Check.That(new short()).IsEqualTo(0);
+            Check.That(new int()).IsEqualTo(0);
+            Check.That(new long()).IsEqualTo(0);
+            Check.That(new long()).IsEqualTo(0);
+            Check.That(new long()).IsEqualTo(0);
+            Check.That(new float()).IsEqualTo(0F);
+            Check.That(new double()).IsEqualTo(0D);
+            Check.That(new decimal()).IsEqualTo(0M);
         }
 
-        [TestMethod]
+        [Test]
         public void Arrays_Struct_Test()
         {
             //Arrays
@@ -86,7 +86,7 @@ namespace CSharp6
             }).Throws<NullReferenceException>();
         }
 
-        [TestMethod]
+        [Test]
         public void Methods_Test()
         {
             //default values
@@ -125,7 +125,7 @@ namespace CSharp6
             Check.That(point5).IsNull();
         }
 
-        [TestMethod]
+        [Test]
         public void ConditionalOperators_Test()
         {
             PointC point1 = null;
@@ -143,7 +143,7 @@ namespace CSharp6
             Check.That(point1 ?? point3).IsEqualTo(point1);
         }
 
-        [TestMethod]
+        [Test]
         public void Override_vs_Hide()
         {
             var recorder = new StringBuilder();
@@ -175,7 +175,7 @@ namespace CSharp6
             Check.That(recorder.ToString()).IsEqualTo("overrided");
         }
 
-        [TestMethod]
+        [Test]
         public void ISet_Test()
         {
             ISet<string> set = new HashSet<string>();
@@ -187,7 +187,7 @@ namespace CSharp6
             Check.That(set).ContainsExactly("un", "deux", "trois", "quatre");
         }
 
-        [TestMethod]
+        [Test]
         public void List_Test()
         {
             //ArrayList can store different types
@@ -218,7 +218,7 @@ namespace CSharp6
             Check.That(list2).HasSize(7);
         }
 
-        [TestMethod]
+        [Test]
         public void TestDates()
         {
             var d1 = new DateTime(2016, 12, 5, 15, 58, 23);
@@ -237,7 +237,7 @@ namespace CSharp6
             Check.That(tuple.Item1.Value.Date.Equals(tuple.Item2.HasValue ? tuple.Item2.Value : DateTime.MinValue)).IsFalse();
         }
 
-        [TestMethod]
+        [Test]
         public void TestLinq()
         {
             var personnes = new List<Personne>
@@ -272,10 +272,10 @@ namespace CSharp6
                 .Select(grp => grp.Key);
 
             var enumerable1 = from c in personnes
-                group c by c.Nom
-                into grp
-                where grp.Count() > 1
-                select grp.Key;
+                              group c by c.Nom
+                              into grp
+                              where grp.Count() > 1
+                              select grp.Key;
 
             var groupes =
                     from personne in personnes
@@ -309,7 +309,7 @@ namespace CSharp6
             Check.That(groupes).HasSize(3);
         }
 
-        [TestMethod]
+        [Test]
         public void LindTestSort()
         {
             var personnes = new List<Personne>
@@ -335,7 +335,7 @@ namespace CSharp6
             }
         }
 
-        [TestMethod]
+        [Test]
         public void DefaultTest()
         {
             StringBuilder defaultStringBuilder = default(StringBuilder);
@@ -350,7 +350,6 @@ namespace CSharp6
             Personne defaultPersonne = default(Personne);
             Check.That(defaultPersonne).IsNull();
         }
-
 
         private class Personne
         {

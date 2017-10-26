@@ -1,13 +1,13 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NFluent;
+using NUnit.Framework;
 
 namespace CSharp6
 {
-    [TestClass]
+    [TestFixture]
     public class DatesTest
     {
-        [TestMethod]
+        [Test]
         public void CompareDatesWithoutHour()
         {
             Check.That(new DateTime(2017, 03, 15, 12, 03, 56) == new DateTime(2017, 03, 15, 12, 03, 56)).IsTrue();
@@ -18,7 +18,7 @@ namespace CSharp6
             Check.That(new DateTime(2017, 03, 15, 11, 11, 11).Date != new DateTime(2016, 03, 15, 12, 03, 56).Date).IsTrue();
         }
 
-        [TestMethod]
+        [Test]
         public void CompareHourMinuteSecondes()
         {
             Check.That(new DateTime(2017, 01, 01, 12, 03, 56).Hour == new DateTime(2014, 03, 15, 12, 08, 44).Hour).IsTrue();

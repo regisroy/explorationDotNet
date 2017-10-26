@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using MesPremiersUnitTestProject;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NFluent;
+using NUnit.Framework;
 
 namespace CSharp6Test
 {
-    [TestClass]
+    [TestFixture]
     public class CollectionsTest
     {
-        [TestMethod]
+        [Test]
         public void HashSet_duplicates()
         {
             var mois = new HashSet<string>();
@@ -25,7 +24,7 @@ namespace CSharp6Test
             Check.That(mois.Count).IsEqualTo(4);
         }
 
-        [TestMethod]
+        [Test]
         public void List_duplicates()
         {
             var mois = new List<string>();
@@ -41,7 +40,7 @@ namespace CSharp6Test
             Check.That(mois.Count).IsEqualTo(7);
         }
 
-        [TestMethod]
+        [Test]
         public void MultiMapList_duplicates()
         {
 
@@ -68,7 +67,7 @@ namespace CSharp6Test
             Check.That(personnesParVille.Count).IsEqualTo(3);
         }
 
-        [TestMethod]
+        [Test]
         public void MultiMapSet_duplicates()
         {
             var personnesParVille = new MultiMapSet<string, string>();

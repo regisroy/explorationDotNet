@@ -1,15 +1,13 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-using MesPremiersUnitTestProject;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NFluent;
+using NUnit.Framework;
 
 namespace CSharp6Test
 {
-    [TestClass]
+    [TestFixture]
     public class DictionaryTest
     {
-        [TestMethod]
+        [Test]
         public void Dictionary_add()
         {
             var nbPhotosByVille = new Dictionary<string, int>();

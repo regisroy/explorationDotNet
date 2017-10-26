@@ -1,13 +1,13 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NFluent;
+using NUnit.Framework;
 
 namespace CSharp6
 {
-    [TestClass]
+    [TestFixture]
     public class EnumTest
     {
-        [TestMethod]
+        [Test]
         public void Enum_to_string()
         {
             Check.That(DecisionEnum.Ajournement.ToString()).IsEqualTo("Ajournement");
@@ -16,14 +16,14 @@ namespace CSharp6
             Check.That(DecisionEnum.Ajournement).IsEqualTo(DecisionEnum.Ajournement);
         }
 
-        [TestMethod]
+        [Test]
         public void Enum_to_int()
         {
             Check.That((int)DecisionEnum.Ajournement).IsEqualTo(3);
             Check.That((int)DecisionEnum.Acceptation).IsEqualTo(0);
         }
 
-        [TestMethod]
+        [Test]
         public void int_to_Enum()
         {
             Check.That((DecisionEnum)3).IsEqualTo(DecisionEnum.Ajournement);
@@ -34,14 +34,14 @@ namespace CSharp6
             Check.That(((DecisionEnum)999999999).GetType()).IsEqualTo(typeof(DecisionEnum));
         }
 
-        [TestMethod]
+        [Test]
         public void Enum_IsDefined()
         {
             Check.That(Enum.IsDefined(typeof(DecisionEnum), 3)).IsTrue();
             Check.That(Enum.IsDefined(typeof(DecisionEnum), 999999999)).IsFalse();
         }
 
-        [TestMethod]
+        [Test]
         public void Enum_get_par_son_nom()
         {
             //recup d'une enum par son nom

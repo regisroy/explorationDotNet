@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using NFluent;
 using NUnit.Framework;
 
-namespace CSharp6Test
+namespace MesPremiersUnitTestProject
 {
     [TestFixture]
     public class DirectoryAndFileUsagesTest
@@ -27,16 +26,16 @@ namespace CSharp6Test
 
             //informations sur un répertoire
             Check.That(Directory.GetCurrentDirectory())
-                .IsOneOfThese(@"C:\Users\Regis\Dropbox\mes_projets\explorationDotNet\MesPremiersUnitTestProject\bin\Debug",  //VS 2017
-                              @"C:\Program Files\JetBrains\Rider 2017.2\lib\ReSharperHost"  //Rider
+                 .IsOneOfThese(@"C:\Users\Regis\Dropbox\mes_projets\explorationDotNet\MesPremiersUnitTestProject\bin\Debug", //VS 2017
+                               @"C:\Program Files\JetBrains\Rider 2017.2\lib\ReSharperHost" //Rider
                               );
-            IDictionary<string, string> environmentVariables = (IDictionary<string, string>) Environment.GetEnvironmentVariables();
+            IDictionary environmentVariables = Environment.GetEnvironmentVariables();
 
             Check.That(environmentVariables.Count).IsStrictlyGreaterThan(40);
             Check.That(environmentVariables["COMPUTERNAME"]).IsEqualTo("GABRIELLE-PC");
-            Check.That(environmentVariables["CommonProgramFiles"]).IsOneOfThese(@"C:\Program Files (x86)\Common Files",
-                                                                                @"C:\Program Files\Common Files"
-                                                                                );
+            Check.That((string) environmentVariables["CommonProgramFiles"]).IsOneOfThese(@"C:\Program Files (x86)\Common Files",
+                                                                                         @"C:\Program Files\Common Files"
+                                                                                        );
             Check.That(environmentVariables["HOMEPATH"]).IsEqualTo(@"\Users\Regis");
             Check.That(environmentVariables["TMP"]).IsEqualTo(@"C:\Users\Regis\AppData\Local\Temp");
             Check.That(environmentVariables["TEMP"]).IsEqualTo(@"C:\Users\Regis\AppData\Local\Temp");
@@ -63,7 +62,7 @@ namespace CSharp6Test
             Check.That(fileInfo.DirectoryName).IsEqualTo(@"c:\tmp");
             Check.That(fileInfo.Name).IsEqualTo("fichierDeTest.txt");
             Check.That(fileInfo.FullName).IsEqualTo(@"c:\tmp\fichierDeTest.txt");
-            
+
             Check.That(Path.GetPathRoot(@"c:\tmp\fichierDeTest.txt")).IsEqualTo(@"c:\");
             Check.That(Path.GetDirectoryName(@"c:\tmp\fichierDeTest.txt")).IsEqualTo(@"c:\tmp");
             Check.That(Path.GetDirectoryName(@"GeneratedCode/Resources\AAA.Data.Resources.csproj")).IsEqualTo(@"GeneratedCode\Resources");

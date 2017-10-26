@@ -1,12 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NumberSystemConverter;
+﻿using NumberSystemConverter;
+using NUnit.Framework;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace NumberSystemConverterUnitTests
 {
-    [TestClass]
+    [TestFixture]
     public class RomanNumeralConverterExpectedValuesUnitTests
     {
-        [TestMethod]
+        [Test]
         public void Number_Equal_One_Expected_Result_I_TestMethod()
         {
             var converter = new RomanNumeralConverter();
@@ -15,7 +16,7 @@ namespace NumberSystemConverterUnitTests
             Assert.AreEqual(result, "I");
         }
 
-        [TestMethod]
+        [Test]
         public void Number_Equal_ThreeThousand_Expected_Result_MMM_TestMethod()
         {
             var converter = new RomanNumeralConverter();
@@ -24,7 +25,7 @@ namespace NumberSystemConverterUnitTests
             Assert.AreEqual(result, "MMM");
         }
 
-        [TestMethod]
+        [Test]
         public void Number_Equal_55_Expected_Result_LV_TestMethod()
         {
             var converter = new RomanNumeralConverter();
@@ -33,7 +34,7 @@ namespace NumberSystemConverterUnitTests
             Assert.AreEqual(result, "LV");
         }
 
-        [TestMethod]
+        [Test]
         public void Number_Equal_100_Expected_Result_C_TestMethod()
         {
             var converter = new RomanNumeralConverter();
@@ -42,7 +43,7 @@ namespace NumberSystemConverterUnitTests
             Assert.AreEqual(result, "C");
         }
 
-        [TestMethod]
+        [Test]
         public void Number_Equal_500_Expected_Result_D_TestMethod()
         {
             var converter = new RomanNumeralConverter();
@@ -51,7 +52,7 @@ namespace NumberSystemConverterUnitTests
             Assert.AreEqual(result, "D");
         }
 
-        [TestMethod]
+        [Test]
         public void Number_Equal_599_Expected_Result_DLXXXXVIIII_TestMethod()
         {
             var converter = new RomanNumeralConverter();
@@ -60,7 +61,7 @@ namespace NumberSystemConverterUnitTests
             Assert.AreEqual(result, "DLXXXXVIIII");
         }
 
-        [TestMethod]
+        [Test]
         public void Number_Equal_2013_Expected_Result_MMXIII_TestMethod()
         {
             var converter = new RomanNumeralConverter();
