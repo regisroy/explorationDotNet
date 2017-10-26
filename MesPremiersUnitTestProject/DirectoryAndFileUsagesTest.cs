@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using NFluent;
 using NUnit.Framework;
@@ -13,10 +14,11 @@ namespace CSharp6Test
         public void Folder_Repertoire_Directory()
         {
             //créer un répertoire localement au build
+            var currentDirectory = Directory.GetCurrentDirectory();
             var tmpDir = Directory.CreateDirectory("tmp");
             Check.That(tmpDir.Exists).IsTrue();
             Check.That(tmpDir.Name).IsEqualTo("tmp");
-            Check.That(tmpDir.FullName).IsEqualTo(@"C:\Users\Regis\Dropbox\mes_projets\solutionMesKatas\MesPremiersUnitTestProject\bin\Debug\tmp");
+            Check.That(tmpDir.FullName).IsEqualTo($@"{currentDirectory}\tmp");
 
             var tmpOnC = Directory.CreateDirectory(@"c:\tmp");
             Check.That(tmpOnC.Name).IsEqualTo(@"tmp");
@@ -25,12 +27,16 @@ namespace CSharp6Test
 
             //informations sur un répertoire
             Check.That(Directory.GetCurrentDirectory())
-                .IsEqualTo(@"C:\Users\Regis\Dropbox\mes_projets\solutionMesKatas\MesPremiersUnitTestProject\bin\Debug");
-            IDictionary environmentVariables = Environment.GetEnvironmentVariables();
+                .IsOneOfThese(@"C:\Users\Regis\Dropbox\mes_projets\explorationDotNet\MesPremiersUnitTestProject\bin\Debug",  //VS 2017
+                              @"C:\Program Files\JetBrains\Rider 2017.2\lib\ReSharperHost"  //Rider
+                              );
+            IDictionary<string, string> environmentVariables = (IDictionary<string, string>) Environment.GetEnvironmentVariables();
 
-            Check.That(environmentVariables.Count).IsGreaterThan(40);
+            Check.That(environmentVariables.Count).IsStrictlyGreaterThan(40);
             Check.That(environmentVariables["COMPUTERNAME"]).IsEqualTo("GABRIELLE-PC");
-            Check.That(environmentVariables["CommonProgramFiles"]).IsEqualTo(@"C:\Program Files (x86)\Common Files");
+            Check.That(environmentVariables["CommonProgramFiles"]).IsOneOfThese(@"C:\Program Files (x86)\Common Files",
+                                                                                @"C:\Program Files\Common Files"
+                                                                                );
             Check.That(environmentVariables["HOMEPATH"]).IsEqualTo(@"\Users\Regis");
             Check.That(environmentVariables["TMP"]).IsEqualTo(@"C:\Users\Regis\AppData\Local\Temp");
             Check.That(environmentVariables["TEMP"]).IsEqualTo(@"C:\Users\Regis\AppData\Local\Temp");

@@ -29,7 +29,7 @@ namespace NFluent.Test
             Check.That(heroes).Not.Contains("Joker").And.StartsWith("Bat").And.Contains("Robin");
 
             int? one = 1;
-            Check.That(one).HasAValue().Which.IsPositive().And.IsEqualTo(1);
+            Check.That(one).HasAValue().Which.IsStrictlyPositive().And.IsEqualTo(1);
 
             const Nationality frenchNationality = Nationality.French;
             Check.ThatEnum(frenchNationality).IsNotEqualTo(Nationality.Korean);
