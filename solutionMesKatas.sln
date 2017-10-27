@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteSamples", "SQLiteSamp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsingResources", "UsingResources\UsingResources.csproj", "{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{084C1B5E-C951-451D-A901-91DC6444C553}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +81,14 @@ Global
 		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Release|x86.ActiveCfg = Release|Any CPU
 		{1A3F2EE3-1882-4ED2-83DC-1A9A5C3808CD}.Release|x86.Build.0 = Release|Any CPU
+		{084C1B5E-C951-451D-A901-91DC6444C553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084C1B5E-C951-451D-A901-91DC6444C553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084C1B5E-C951-451D-A901-91DC6444C553}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{084C1B5E-C951-451D-A901-91DC6444C553}.Debug|x86.Build.0 = Debug|Any CPU
+		{084C1B5E-C951-451D-A901-91DC6444C553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084C1B5E-C951-451D-A901-91DC6444C553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{084C1B5E-C951-451D-A901-91DC6444C553}.Release|x86.ActiveCfg = Release|Any CPU
+		{084C1B5E-C951-451D-A901-91DC6444C553}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
