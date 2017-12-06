@@ -27,7 +27,7 @@ namespace MesPremiersUnitTestProject
             //informations sur un répertoire
             Check.That(Directory.GetCurrentDirectory())
                  .IsOneOfThese(@"C:\Users\Regis\Dropbox\mes_projets\explorationDotNet\MesPremiersUnitTestProject\bin\Debug", //VS 2017
-                               @"C:\Program Files\JetBrains\Rider 2017.2\lib\ReSharperHost" //Rider
+                               @"C:\Program Files\JetBrains\JetBrains Rider 2017.2.1\lib\ReSharperHost" //Rider
                               );
             IDictionary environmentVariables = Environment.GetEnvironmentVariables();
 

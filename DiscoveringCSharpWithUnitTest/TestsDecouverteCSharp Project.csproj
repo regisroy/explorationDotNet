@@ -67,6 +67,7 @@
     <Compile Include="DatesTest.cs" />
     <Compile Include="EnumTest.cs" />
     <Compile Include="DirectoryAndFileUsagesTest.cs" />
+    <Compile Include="ExtensionsTest.cs" />
     <Compile Include="FormattageToStringTest.cs" />
     <Compile Include="CollectionsTest.cs" />
     <Compile Include="RegExpTest.cs" />

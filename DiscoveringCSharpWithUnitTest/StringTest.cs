@@ -31,5 +31,14 @@ namespace CSharp6Test
             char[] myChar = {'H', 'e', 'o', 'W', 'L', 'd', ' '};
             Check.That(MY_STRING.TrimStart(myChar)).IsEqualTo("llo World, hello World!");
         }
+
+        [Test]
+        public void Contains()
+        {
+            //Les majuscules sont importantes
+            Check.That("france without capital".Contains("France")).IsFalse();
+            Check.That("France with capital".Contains("France")).IsTrue();
+            Check.ThatCode(() => "France with capital".Contains(null)).Throws<ArgumentNullException>();
+        }
     }
 }
