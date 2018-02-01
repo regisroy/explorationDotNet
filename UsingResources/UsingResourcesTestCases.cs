@@ -1,37 +1,36 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NFluent;
+﻿using NFluent;
+using NUnit.Framework;
 
-namespace CSharp.Resources
+namespace UsingResources
 {
-    [TestClass]
-    public class UsingResourcesTestCases
-    {
-        [TestMethod]
-        public void GettingFileResources()
-        {
-            var databaseCreationFileContent = UsingResources.Properties.Resources.database_creation;
-            Check.That(databaseCreationFileContent).Equals("DROP DATABASE Cool\r\n" +
-                                                           "GO\r\n" +
-                                                           "CREATE DATABASE Cool\r\n" +
-                                                           "GO");
-        }
+	[TestFixture]
+	public class UsingResourcesTestCases
+	{
+		[Test]
+		public void GettingFileResources()
+		{
+			var databaseCreationFileContent = Properties.Resources.database_creation;
+			Check.That(databaseCreationFileContent).Equals("DROP DATABASE Cool\r\n" +
+			                                               "GO\r\n" +
+			                                               "CREATE DATABASE Cool\r\n" +
+			                                               "GO");
+		}
 
-        [TestMethod]
-        public void GettingExcelFileFromResources()
-        {
-            var databaseCreationFileContent = UsingResources.Properties.Resources.database_creation;
-            Check.That(databaseCreationFileContent).Equals("DROP DATABASE Cool\r\n" +
-                                                           "GO\r\n" +
-                                                           "CREATE DATABASE Cool\r\n" +
-                                                           "GO");
-        }
+		[Test]
+		public void GettingExcelFileFromResources()
+		{
+			var databaseCreationFileContent = Properties.Resources.database_creation;
+			Check.That(databaseCreationFileContent).Equals("DROP DATABASE Cool\r\n" +
+			                                               "GO\r\n" +
+			                                               "CREATE DATABASE Cool\r\n" +
+			                                               "GO");
+		}
 
-        [TestMethod]
-        public void GettingProperties()
-        {
-            var projectName = UsingResources.Properties.Resources.ProjectName;
-            Check.That(projectName).Equals("Nom du projet dans une ressource de type string");
-        }
-    }
+		[Test]
+		public void GettingProperties()
+		{
+			var projectName = Properties.Resources.ProjectName;
+			Check.That(projectName).Equals("Nom du projet dans une ressource de type string");
+		}
+	}
 }
