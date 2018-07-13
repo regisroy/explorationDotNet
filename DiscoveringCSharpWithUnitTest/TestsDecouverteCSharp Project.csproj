@@ -59,7 +59,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BooleanTests.cs" />
     <Compile Include="ClassTypeTest.cs" />
+    <Compile Include="DelegateTests.cs" />
     <Compile Include="DictionaryTest.cs" />
     <Compile Include="Common\MultiMapSet.cs" />
     <Compile Include="Common\MultiMapList.cs" />
