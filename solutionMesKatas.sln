@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsDecouverteC# Project", "DiscoveringCSharpWithUnitTest\TestsDecouverteCSharp Project.csproj", "{F8775E25-AADE-4FF0-B0C6-72E8548A6D5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "ClassLibrary\ClassLibrary.csproj", "{47A6A880-6108-4D2B-9408-5FF7F944C5B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RomanNumeralConverter", "RomanNumeralConverter\RomanNumeralConverter.csproj", "{47A6A880-6108-4D2B-9408-5FF7F944C5B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitSamples", "NUnitSamples\NUnitSamples.csproj", "{901FB0C5-EABC-46D7-A071-D280648916C6}"
 EndProject
