@@ -27,20 +27,20 @@ namespace MesPremiersUnitTestProject
             //informations sur un répertoire
             Check.That(Directory.GetCurrentDirectory())
                  .IsOneOfThese(@"C:\Users\Regis\Dropbox\mes_projets\explorationDotNet\MesPremiersUnitTestProject\bin\Debug", //VS 2017
-                               @"C:\Program Files\JetBrains\JetBrains Rider 2017.3\lib\ReSharperHost" //Rider
+                               @"C:\Users\pgrw680\_PROJETS\exploration\explorationDotNet\DiscoveringCSharpWithUnitTest\bin\Debug" //Rider
                               );
             IDictionary environmentVariables = Environment.GetEnvironmentVariables();
 
             Check.That(environmentVariables.Count).IsStrictlyGreaterThan(40);
-            Check.That(environmentVariables["COMPUTERNAME"]).IsEqualTo("GABRIELLE-PC");
+            Check.That(environmentVariables["COMPUTERNAME"]).IsEqualTo("923010ZL0868");
             Check.That((string) environmentVariables["CommonProgramFiles"]).IsOneOfThese(@"C:\Program Files (x86)\Common Files",
                                                                                          @"C:\Program Files\Common Files"
                                                                                         );
-            Check.That(environmentVariables["HOMEPATH"]).IsEqualTo(@"\Users\Regis");
-            Check.That(environmentVariables["TMP"]).IsEqualTo(@"C:\Users\Regis\AppData\Local\Temp");
-            Check.That(environmentVariables["TEMP"]).IsEqualTo(@"C:\Users\Regis\AppData\Local\Temp");
-            Check.That(environmentVariables["USERNAME"]).IsEqualTo(@"Regis");
-            Check.That(environmentVariables["USERNAME"]).IsEqualTo(@"Regis");
+            Check.That(environmentVariables["HOMEPATH"]).IsEqualTo(@"\Users\pgrw680");
+            Check.That(environmentVariables["TMP"]).IsEqualTo(@"C:\Users\pgrw680\AppData\Local\Temp");
+            Check.That(environmentVariables["TEMP"]).IsEqualTo(@"C:\Users\pgrw680\AppData\Local\Temp");
+            Check.That(environmentVariables["USERNAME"]).IsEqualTo(@"PGRW680");
+            Check.That(environmentVariables["USERNAME"]).IsEqualTo(@"PGRW680");
 
             var tmpDirFileInfo = new FileInfo(@"c:\tmp");
             Check.That(tmpDirFileInfo.DirectoryName).IsEqualTo(@"c:\");

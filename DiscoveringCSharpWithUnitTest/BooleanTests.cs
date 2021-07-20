@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NFluent;
 using NUnit.Framework;
 
@@ -9,7 +8,6 @@ namespace CSharp6Test
 	public class BooleanTests
 	{
 		[Test]
-		[ExpectedException(typeof(InvalidOperationException))]
 		public void bool_nullable()
 		{
 			bool? value = null;

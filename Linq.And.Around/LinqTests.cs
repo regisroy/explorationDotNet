@@ -38,17 +38,19 @@ namespace Linq.And.Around
 			
 			Check.That(from order in orders where order.OrderDate >= new DateTime(2017, 3, 3) select order).HasSize(3);
 
-			Check.That(orders.AsQueryable().Where("OrderDate >= DateTime(2017, 3, 3)")).HasSize(3);
-
-			Check.That(orders.AsQueryable().Where("OrderDate > DateTime(2017, 3, 3)")).HasSize(2);
+			//TODO
 			
-			Check.That(orders.AsQueryable().Where("Customer.Name == \"Arthur\"")).HasSize(1);
-			
-			Check.That(orders.AsQueryable().Where("Products.Count > 1")).HasSize(3);
-			
-			Check.That(products.AsQueryable().Where("Description.Contains(@0)", "uit")).HasSize(6);
-			
-			Check.That(customers.AsQueryable().Where("Name.StartsWith(@0)", "J")).HasSize(1);
+			// Check.That(orders.AsQueryable().Where("OrderDate >= DateTime(2017, 3, 3)")).HasSize(3);
+			//
+			// Check.That(orders.AsQueryable().Where("OrderDate > DateTime(2017, 3, 3)")).HasSize(2);
+			//
+			// Check.That(orders.AsQueryable().Where("Customer.Name == \"Arthur\"")).HasSize(1);
+			//
+			// Check.That(orders.AsQueryable().Where("Products.Count > 1")).HasSize(3);
+			//
+			// Check.That(products.AsQueryable().Where("Description.Contains(@0)", "uit")).HasSize(6);
+			//
+			// Check.That(customers.AsQueryable().Where("Name.StartsWith(@0)", "J")).HasSize(1);
 		}
 	}
 
