@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace Xml
+namespace Xml.model
 {
     [XmlRoot(ElementName = "Company")]  
     public class Company  

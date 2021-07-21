@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace Xml
 {
-    public class SerializerService
+    public static class SerializerService
     {
         public static T DeserializeToObject<T>(string filepath) where T : class
         {
