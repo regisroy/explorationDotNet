@@ -9,9 +9,13 @@ namespace DotNetDependencyInjection.examples._01
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
+        private readonly IService _doSomethingService;
 
-        public Worker(ILogger<Worker> logger) =>
+        public Worker(ILogger<Worker> logger, IService doSomethingService)
+        {
             _logger = logger;
+            _doSomethingService = doSomethingService;
+        }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -20,9 +24,9 @@ namespace DotNetDependencyInjection.examples._01
             while (!stoppingToken.IsCancellationRequested)
             {
                 count++;
-                _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                Console.WriteLine($"console: worker running loop {count}");
-                await Task.Delay(2000, stoppingToken);
+                _doSomethingService.Process($"{count}");
+                
+                await Task.Delay(TimeSpan.FromSeconds(10), stoppingToken);
             }
         }
     }

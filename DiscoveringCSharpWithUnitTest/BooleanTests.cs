@@ -12,6 +12,9 @@ namespace CSharp6Test
 		{
 			bool? value = null;
 			Check.ThatCode(() => (bool) value).Throws<InvalidOperationException>();
+			
+			Console.WriteLine(System.IO.Path.GetTempFileName());
+			
 		}
 	}
 }
