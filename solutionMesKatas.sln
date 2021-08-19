@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml", "Xml\Xml.csproj", "{F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCoreDependencyInjection", "DotNetCoreDependencyInjection\DotNetCoreDependencyInjection.csproj", "{25BC60FF-FF64-44B1-969C-687E46EB062C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "reveal.js", "reveal.js\reveal.js.csproj", "{5F30EBB9-3CA6-46C0-A6AB-3588139F808C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
