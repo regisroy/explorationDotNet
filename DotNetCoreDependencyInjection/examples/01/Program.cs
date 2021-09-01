@@ -25,7 +25,6 @@ namespace DotNetDependencyInjection.examples._01
                         //.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
                         .AddEnvironmentVariables();
                     _configurationRoot = appConfig.Build();
-
                 })
                 .ConfigureServices((_, services) =>
                 {
